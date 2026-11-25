@@ -1,0 +1,57 @@
+/*
+  Logbook: the design tokens for the whole site.
+  A redesign starts here. Colours, type and motion are named by the job they do,
+  so components never mention a hex value or a font family.
+*/
+
+@theme {
+  /* Paper */
+  --color-paper: #f5f7fb; /* the page */
+  --color-grid: #d5deee; /* graph-paper lines */
+  --color-sheet: #fdfeff; /* a raised sheet for long reading */
+
+  /* Ink */
+  --color-ink: #15245c; /* text and rules */
+  --color-dim: #55607a; /* printed labels and meta */
+
+  /* Pen and highlighter */
+  --color-pen: #d4262c; /* handwriting and the one loud accent */
+  --color-pen-deep: #b31e24; /* pen on white, where it must pass as text */
+  --color-rule: #e58a8e; /* the red margin rule */
+  --color-mark: #ffe94d; /* highlighter */
+  --color-mark-soft: #fff3a6; /* highlighter wash: hover, TL;DR */
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@theme inline {
+  /* The three faces are loaded in src/app/layout.tsx. */
+  --font-sans: var(--font-chivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-chivo-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-hand: var(--font-reenie), "Bradley Hand", cursive;
+}
+
+:root {
+  /* Layout */
+  --rule-heavy: 2.5px; /* frame of a table or sheet */
+  --rule-light: 1.5px; /* line between rows */
+  --grid-size: 28px;
+  --gutter-left: clamp(46px, 8vw, 124px); /* room for the margin rule */
+  --gutter-right: clamp(20px, 3.4vw, 48px);
+  --margin-rule-x: clamp(30px, 6vw, 92px);
+
+  /* Code colours, read by the syntax highlighter */
+  --code-foreground: var(--color-ink);
+  --code-background: transparent;
+  --code-token-keyword: var(--color-ink);
+  --code-token-string: var(--color-pen-deep);
+  --code-token-string-expression: var(--color-pen-deep);
+  --code-token-comment: var(--color-dim);
+  --code-token-constant: var(--color-ink);
+  --code-token-function: var(--color-ink);
+  --code-token-parameter: var(--color-ink);
+  --code-token-punctuation: var(--color-dim);
+  --code-token-link: var(--color-pen-deep);
+}
