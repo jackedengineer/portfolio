@@ -134,7 +134,7 @@ Every other library pattern is checked against its documentation in the task tha
 
 - [ ] Success criteria 7, 9 and 11 hold in the browser tests
 
-- [ ] Task 29: Script weight check, dependency audit and setup instructions
+- [ ] Task 29: Release checks and setup instructions
 
 #### Checkpoint 4: V1 complete
 
