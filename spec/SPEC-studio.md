@@ -1,6 +1,6 @@
 # Spec: Studio V1
 
-Status: proposed, waiting for review
+Status: approved on 2026-11-26
 
 ## Objective
 
@@ -208,7 +208,7 @@ The two engineering skill sets contradict each other in places. These are the ru
 
 | Topic | agent-skills says | pstack says | This spec follows |
 | --- | --- | --- | --- |
-| Stopping for approval | You approve the spec, the plan, each checkpoint and each merge | Keep going on anything reversible, pause only for irreversible actions | Open question 5 |
+| Stopping for approval | You approve the spec, the plan, each checkpoint and each merge | Keep going on anything reversible, pause only for irreversible actions | Resolved question 5 |
 | Tests | A failing test first for all logic | Only when cheap, and no test beats a bad test | Test first for repository and sign-in logic, browser tests for the main path, no tests of internals |
 | Comments | Explain why, cite documentation | Delete nearly every comment | Why-comments stay |
 | Rows read from the database | Trust them | Parse them again | Trust the types Drizzle derives from the schema |
@@ -225,10 +225,12 @@ The two engineering skill sets contradict each other in places. These are the ru
 - **Crawler and referral dashboard.** That is stage 5.
 - **A stricter script policy with per-request nonces.** It would stop public pages from being prebuilt.
 
-## Open questions
+## Resolved questions
 
-1. **Local database.** Is it acceptable that `pnpm dev` needs a `DATABASE_URL` (a Neon branch or a local Postgres)? The alternative is an embedded database for development, which means a second code path that production never runs.
-2. **CI.** Should V1 add a GitHub Actions workflow that runs `pnpm check`, `pnpm build` and the browser tests on every pull request?
-3. **Image storage, for the follow-up.** Vercel Blob or Cloudflare R2? This does not block V1.
-4. **One spec or four.** Is one spec for the four modules right, or do you want each module specified and approved separately?
-5. **How often to stop.** The proposal: you approve this spec, then the plan. After that each module is built without stopping, reviewed by the code and security review agents, and opened as one pull request for you to merge. Work pauses in between only for something irreversible or something this spec does not cover. Is that the right amount of checking, or do you want more stops or fewer?
+The spec was approved with a one-word reply, so each question is recorded with the answer that was recommended. Say so if any of these is wrong.
+
+1. **Local database.** `pnpm dev` needs a `DATABASE_URL`, either a Neon branch or a local Postgres. There is no embedded database for development.
+2. **CI.** V1 adds a GitHub Actions workflow that runs the checks, the build and the browser tests on every pull request.
+3. **Image storage.** Cloudflare R2, in the follow-up. It is not part of V1.
+4. **One spec.** This spec covers all four modules.
+5. **How often to stop.** You approve the spec and then the plan. After that each module is built without stopping, reviewed by the code and security review agents, and opened as one pull request for you to merge. Work pauses in between only for something irreversible or something this spec does not cover.
